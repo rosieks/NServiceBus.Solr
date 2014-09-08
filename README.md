@@ -7,10 +7,11 @@ This simply library provide you the ability to invoke delta import for Apache So
       protected override void Configure()
       {
         this.TriggerDeltaImportFor<OrderSearchItem>()
-          .Every(10.Minutes()) // this method doesn't work yet.
+          .Every(10.Minutes()) // this method doesn't work yet for XML serializer.
           .On<OrderSubmited>()
           .On<OrderAccepted>()
           .On<OrderBilled>()
           .On<OrderShipped>();
       }
     }
+

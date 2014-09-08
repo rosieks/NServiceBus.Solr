@@ -2,17 +2,17 @@
 {
     using System;
     using NServiceBus.ObjectBuilder;
-    using NServiceBus.Unicast;
 
     public class TriggerDeltaImportFluent<TCollection>
     {
         private readonly IConfigureComponents configurer;
-        private readonly MessageHandlerRegistry messageHandlerRegistry;
         private readonly bool throttleErrors;
 
-        public TriggerDeltaImportFluent(MessageHandlerRegistry messageHandlerRegistry, IConfigureComponents configurer, bool throttleErrors)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerDeltaImportFluent{TCollection}"/> class.
+        /// </summary>
+        public TriggerDeltaImportFluent(IConfigureComponents configurer, bool throttleErrors)
         {
-            this.messageHandlerRegistry = messageHandlerRegistry;
             this.configurer = configurer;
             this.throttleErrors = throttleErrors;
         }

@@ -5,7 +5,7 @@
 
     internal class ConfigureSchedule : IWantToRunWhenBusStartsAndStops
     {
-        private static IDictionary<Type, TimeSpan> Timespans = new Dictionary<Type, TimeSpan>();
+        private static readonly IDictionary<Type, TimeSpan> Timespans = new Dictionary<Type, TimeSpan>();
 
         public IBus Bus { get; set; }
 

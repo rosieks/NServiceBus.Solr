@@ -2,6 +2,7 @@
 {
     using System;
     using NServiceBus.ObjectBuilder;
+    using NServiceBus.Solr.Infrastructure;
 
     public class TriggerDeltaImportFluent<TCollection>
     {

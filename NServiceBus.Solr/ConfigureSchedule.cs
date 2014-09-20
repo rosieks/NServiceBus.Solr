@@ -1,4 +1,4 @@
-﻿namespace NServiceBus.Solr
+﻿namespace NServiceBus.Solr.Infrastructure
 {
     using System;
     using System.Collections.Generic;

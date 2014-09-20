@@ -1,4 +1,4 @@
-﻿namespace NServiceBus.Solr
+﻿namespace NServiceBus.Solr.Infrastructure
 {
     using System;
     using SolrNet;
@@ -6,7 +6,7 @@
     /// <summary>
     /// Delta import command. 
     /// </summary>
-    public class SolrDeltaImportCommand : ISolrCommand
+    internal class SolrDeltaImportCommand : ISolrCommand
     {
         /// <summary>
         /// Executes the SOLR delta import for specified collection.

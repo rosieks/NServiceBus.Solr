@@ -1,4 +1,4 @@
-namespace NServiceBus.Solr
+namespace NServiceBus.Solr.Infrastructure
 {
     public class TriggerDeltaImport<TCollection> : ICommand
     {

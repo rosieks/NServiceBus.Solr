@@ -1,10 +1,10 @@
-﻿namespace NServiceBus.Solr
+﻿namespace NServiceBus.Solr.Infrastructure
 {
     using System;
     using NServiceBus.Logging;
     using SolrNet;
 
-    public class TriggerDeltaImportHandler<TDocument, TEvent> : IHandleMessages<TEvent>
+    internal class TriggerDeltaImportHandler<TDocument, TEvent> : IHandleMessages<TEvent>
     {
         private static readonly ILog Log = LogManager.LoggerFactory.GetLogger(typeof(TriggerDeltaImportHandler<TDocument, TEvent>));
         private readonly ISolrBasicOperations<TDocument> operations;

@@ -2,13 +2,15 @@
 {
     using NServiceBus.Features;
     using NServiceBus.ObjectBuilder;
+    using NServiceBus.Solr.Infrastructure;
 
-    public abstract class SolrDataImportTrigger : Feature, IWantToRunBeforeConfiguration
+    public abstract class ConfigureSolrIntegration : Feature, IWantToRunBeforeConfiguration
     {
         public IConfigureComponents Configurer { get; set; }
 
         void IWantToRunBeforeConfiguration.Init()
         {
+            NServiceBus.Configure.TypesToScan.Remove(typeof(SolrPingPeriodicCheck<>));
             this.Configure();
         }
 
@@ -27,6 +29,12 @@
             return new TriggerDeltaImportFluent<TCollection>(
                 NServiceBus.Configure.Instance.Configurer,
                 throttleErrors);
+        }
+
+        protected PingFluent<TCollection> Ping<TCollection>()
+        {
+            return new PingFluent<TCollection>(
+                NServiceBus.Configure.Instance.Configurer);
         }
     }
 }

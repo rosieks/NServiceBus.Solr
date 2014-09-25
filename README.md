@@ -29,7 +29,7 @@ By default any exception occured while invoking delta import is caught and logge
 Monitor availability of collection
 ----------------------------------
 
-In order to monitor availability of the Apache Solr collection by ServiceControl and ServicePulsce you have to extend configuration of your `ConfigureSolrIntegration` class by the following instructions:
+In order to monitor availability of the Apache Solr collection by ServiceControl and ServicePulse you have to extend configuration of your `ConfigureSolrIntegration` class by the following instructions:
 
     public class MonitorAvailabilityOfOrderSearchItem : ConfigureSolrIntegration
     {
@@ -37,7 +37,7 @@ In order to monitor availability of the Apache Solr collection by ServiceControl
         {
             this.Ping<OrderSearchItem>()
                 .Every(10.Minutes());
-      }
+        }
     }
 
 Known issues
